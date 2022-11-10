@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:kafarat_plus_merchant/services/app_localizations_delegate.service.dart';
 import 'package:kafarat_plus_merchant/utils/constants.dart';
+import 'package:kafarat_plus_merchant/views/pages/active_tasks.dart';
 import 'package:kafarat_plus_merchant/views/pages/categories/category_view_page.dart';
 import 'package:kafarat_plus_merchant/views/pages/profile_page.dart';
 import 'package:tecfy_basic_package/tecfy_basic_package.dart';
@@ -62,10 +63,10 @@ class MyApp extends StatelessWidget {
       },
       title: 'Kafarat Plus (Merchant)',
       theme: ThemeData(
-        fontFamily: "BalooBhaijaan2",
+        fontFamily: "Baloo",
         primarySwatch: createMaterialColor(Constants.mainColor),
       ),
-      home: const ProfilePage(),
+      home: const ActiveTasks(),
     );
   }
 }

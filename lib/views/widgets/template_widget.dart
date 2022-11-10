@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -7,10 +8,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:kafarat_plus_merchant/utils/constants.dart';
 import 'package:kafarat_plus_merchant/utils/loading_over_utils.dart';
+import 'package:kafarat_plus_merchant/views/pages/active_tasks.dart';
+import 'package:kafarat_plus_merchant/views/pages/notification_page.dart';
+import 'package:kafarat_plus_merchant/views/pages/profile_page.dart';
+import 'package:kafarat_plus_merchant/views/pages/pending_tasks.dart';
 import 'package:kafarat_plus_merchant/views/widgets/common/scrollable_widget.common.widgets.dart';
 import 'package:tecfy_basic_package/tecfy_basic_package.dart';
 
-class TamplatePage extends StatefulWidget {
+class TemplatePage extends StatefulWidget {
   final String? pageTitle;
   final int? navBarIndex;
   final int? sideBarIndex;
@@ -20,10 +25,14 @@ class TamplatePage extends StatefulWidget {
   final Widget? titleWidget;
   final bool isDrawerShown;
   final ScrollController? scrollController;
-  final bool changeAppbarBackground;
 
-  final Widget? fat;
-  const TamplatePage(
+  // final TabController? tabController;
+  final bool changeAppbarBackground;
+  final bool hasBody;
+
+  final Widget? fab;
+
+  const TemplatePage(
       {required this.bodyBuilder,
       this.pageTitle,
       this.titleWidget,
@@ -31,17 +40,19 @@ class TamplatePage extends StatefulWidget {
       this.navBarIndex,
       this.sideBarIndex,
       this.scrollController,
+      // this.tabController,
       this.isDrawerShown = false,
       this.changeAppbarBackground = false,
-      this.fat,
+      this.fab,
       this.onRefresh,
-      super.key});
+      super.key,
+      required this.hasBody});
 
   @override
-  State<TamplatePage> createState() => _TamplatePageState();
+  State<TemplatePage> createState() => _TemplatePageState();
 }
 
-class _TamplatePageState extends State<TamplatePage> {
+class _TemplatePageState extends State<TemplatePage> {
   @override
   Widget build(BuildContext context) {
     return MediaQuery.of(context).size.width > 700
@@ -381,15 +392,15 @@ class _TamplatePageState extends State<TamplatePage> {
         backgroundColor: Constants.backgroundColor,
         drawer: widget.isDrawerShown
             ? Drawer(
-                child: Drawer(),
+                child: Text('Drawer'),
+                backgroundColor: Colors.black,
               )
             : null,
         appBar: appBarWidget(),
-        body: Padding(
-          padding: const EdgeInsets.all(15),
-          child: Column(
-            children: [
-              widget.headerBuilder?.call(context) ?? const SizedBox(),
+        body: Column(
+          children: [
+            widget.headerBuilder?.call(context) ?? const SizedBox(),
+            if (widget.hasBody)
               Expanded(
                 child: widget.onRefresh == null
                     ? scrollBodyMobileWidget()
@@ -399,10 +410,9 @@ class _TamplatePageState extends State<TamplatePage> {
                         },
                         child: scrollBodyMobileWidget()),
               ),
-            ],
-          ),
+          ],
         ),
-        floatingActionButton: widget.fat,
+        floatingActionButton: widget.fab,
         bottomNavigationBar:
             widget.navBarIndex == null ? const SizedBox() : bottomNavBar());
   }
@@ -447,7 +457,27 @@ class _TamplatePageState extends State<TamplatePage> {
       ],
       currentIndex: widget.navBarIndex!,
       selectedItemColor: Colors.white,
-      onTap: (index) {},
+      onTap: (index) {
+        switch (index) {
+          case 0:
+            AppNavigator.navigateTo(context, () => ActiveTasks(),
+                replaceAll: true);
+            break;
+          case 1:
+            AppNavigator.navigateTo(context, () => PendingTasks(),
+                replaceAll: true);
+            break;
+          case 2:
+            AppNavigator.navigateTo(context, () => NotificationPage(),
+                replaceAll: true);
+            break;
+          case 3:
+            AppNavigator.navigateTo(context, () => ProfilePage(),
+                replaceAll: true);
+            break;
+          default:
+        }
+      },
     );
   }
 
@@ -474,7 +504,7 @@ class _TamplatePageState extends State<TamplatePage> {
           ? Constants.mainColor
           : Constants.backgroundColor,
       title: widget.titleWidget ??
-          Text(
+          AutoSizeText(
             widget.pageTitle ?? 'No Title',
             style: TextStyle(
                 fontWeight: FontWeight.w500,

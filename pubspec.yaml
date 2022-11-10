@@ -35,17 +35,23 @@ dependencies:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  tecfy_basic_package: ^1.1.12
-  hexcolor: ^2.0.7
+  cupertino_icons: ^1.0.5
+  tecfy_basic_package: ^1.1.18
+  hexcolor: ^3.0.1
   intl: ^0.17.0
   uuid: ^3.0.6
   # firebase_core: ^1.17.1
   # firebase_messaging: ^13.0.4
-  file_picker: ^4.5.1
-  http_parser: ^4.0.0
+  file_picker: ^5.2.2
+  http_parser: ^4.0.2
   http: ^0.13.5
   flutter_switch: ^0.3.2
+  tab_indicator_styler: ^2.0.0
+  auto_size_text: ^3.0.0
+  flutter_svg: ^1.1.6
+  cached_network_image: ^3.2.2
+  #  scroll_to_id: ^1.5.1
+  scrollable_list_tab_scroller: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -85,9 +91,23 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: BalooBhaijaan2
+    - family: Baloo
       fonts:
-        - asset: assets/fonts/BalooBhaijaan2-Regular.ttf
+        - asset: assets/fonts/BalooBhaijaan2Bold.ttf
+          weight: 700
+        - asset: assets/fonts/BalooBhaijaan2Medium.ttf
+          weight: 500
+        - asset: assets/fonts/BalooBhaijaan2SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/BalooBhaijaan2ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/BalooBhaijaan2Regular.ttf
+          weight: 400
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/TajawalBold.ttf
+          weight: 700
+
   # fonts:
   #   - family: Schyler
   #     fonts:

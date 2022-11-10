@@ -6,7 +6,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:kafarat_plus_merchant/utils/constants.dart';
 import 'package:kafarat_plus_merchant/views/widgets/category_container.dart';
 import 'package:kafarat_plus_merchant/views/widgets/common/toggle_title.common.dart';
-import 'package:kafarat_plus_merchant/views/widgets/tamplate_widget.dart';
+import 'package:kafarat_plus_merchant/views/widgets/template_widget.dart';
 
 class CategoryViewPage extends StatefulWidget {
   const CategoryViewPage({super.key});
@@ -19,7 +19,8 @@ class _CategoryViewPageState extends State<CategoryViewPage> {
   bool valueEx = false;
   @override
   Widget build(BuildContext context) {
-    return TamplatePage(
+    return TemplatePage(
+        hasBody: true,
         changeAppbarBackground: true,
         titleWidget: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),

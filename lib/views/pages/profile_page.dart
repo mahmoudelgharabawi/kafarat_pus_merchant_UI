@@ -7,7 +7,7 @@ import 'package:kafarat_plus_merchant/views/pages/categories/category_view_page.
 import 'package:kafarat_plus_merchant/views/widgets/common/app_button.dart';
 import 'package:kafarat_plus_merchant/views/widgets/common/app_text_field_ex.common.widgets.dart';
 import 'package:kafarat_plus_merchant/views/widgets/image_pick_profile_widget.dart';
-import 'package:kafarat_plus_merchant/views/widgets/tamplate_widget.dart';
+import 'package:kafarat_plus_merchant/views/widgets/template_widget.dart';
 import 'package:tecfy_basic_package/tecfy_basic_package.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -15,8 +15,9 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TamplatePage(
+    return TemplatePage(
         navBarIndex: 3,
+        hasBody: true,
         titleWidget: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
