@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kafarat_plus_merchant/utils/constants.dart';
+import 'package:kafarat_plus_merchant/views/pages/product_details_page.dart';
 import 'package:kafarat_plus_merchant/views/widgets/common/card_widget.dart';
 import 'package:kafarat_plus_merchant/views/widgets/template_widget.dart';
 import 'package:scrollable_list_tab_scroller/scrollable_list_tab_scroller.dart';
-import 'package:tab_indicator_styler/tab_indicator_styler.dart';
+import 'package:tecfy_basic_package/tecfy_basic_package.dart';
 
 class ActiveTasks extends StatefulWidget {
   const ActiveTasks({Key? key}) : super(key: key);
@@ -20,19 +20,19 @@ class _ActiveTasksState extends State<ActiveTasks>
 
   final data = {
     "الكل": [
-      CardWidget(),
-      CardWidget(),
-      CardWidget(),
+      const CardWidget(),
+      const CardWidget(),
+      const CardWidget(),
     ],
     "قبول": [
-      CardWidget(),
+      const CardWidget(),
     ],
     "المعلقة": [
-      CardWidget(),
-      CardWidget(),
+      const CardWidget(),
+      const CardWidget(),
     ],
     "تم التركيب": [
-      CardWidget(),
+      const CardWidget(),
     ],
   };
 
@@ -86,7 +86,12 @@ class _ActiveTasksState extends State<ActiveTasks>
                     ],
                   ),
                 ),
-                ...data.values.elementAt(index).map((e) => e),
+                ...data.values.elementAt(index).map((e) => InkWell(
+                    onTap: () {
+                      AppNavigator.navigateTo(
+                          context, () => ProductDetailsPage());
+                    },
+                    child: e)),
               ],
             );
           },
@@ -99,20 +104,20 @@ class _ActiveTasksState extends State<ActiveTasks>
                   data.keys.elementAt(index),
                   style: !active
                       ? null
-                      : TextStyle(
+                      : const TextStyle(
                           decoration: TextDecoration.underline,
                           decorationStyle: TextDecorationStyle.wavy),
                 ),
                 Container(
                   width: 1,
-                  color: Color.fromRGBO(245, 245, 245, 1),
+                  color: const Color.fromRGBO(245, 245, 245, 1),
                 ),
               ],
             );
           },
         ),
       ),
-      bodyBuilder: (p0) => SizedBox(),
+      bodyBuilder: (p0) => const SizedBox(),
     );
   }
 

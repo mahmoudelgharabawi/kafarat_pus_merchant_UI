@@ -36,7 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
-  tecfy_basic_package: ^1.1.18
+  tecfy_basic_package: ^1.1.23
   hexcolor: ^3.0.1
   intl: ^0.17.0
   uuid: ^3.0.6
@@ -52,6 +52,7 @@ dependencies:
   cached_network_image: ^3.2.2
   #  scroll_to_id: ^1.5.1
   scrollable_list_tab_scroller: ^1.1.0
+  card_swiper: ^2.0.4
 
 dev_dependencies:
   flutter_test:

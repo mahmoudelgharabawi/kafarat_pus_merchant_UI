@@ -586,6 +586,7 @@ class CardWidget extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Card(
         elevation: 5,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Column(
           children: [
             Padding(
@@ -598,7 +599,7 @@ class CardWidget extends StatelessWidget {
                     height: 15,
                     // padding: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
                     decoration: BoxDecoration(
-                      color: Color.fromRGBO(217, 217, 217, 1),
+                      color: const Color.fromRGBO(217, 217, 217, 1),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: const Center(
@@ -616,7 +617,7 @@ class CardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     width: 60,
                     height: 15,
@@ -640,7 +641,7 @@ class CardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Container(
@@ -666,7 +667,7 @@ class CardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Container(
@@ -674,7 +675,7 @@ class CardWidget extends StatelessWidget {
                     height: 15,
                     // padding: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
                     decoration: BoxDecoration(
-                      color: Color.fromRGBO(38, 81, 235, 1),
+                      color: const Color.fromRGBO(38, 81, 235, 1),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: const Center(
@@ -695,7 +696,7 @@ class CardWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -709,13 +710,13 @@ class CardWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'سوني 175/70R14 NP226 82T',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Container(
@@ -723,7 +724,7 @@ class CardWidget extends StatelessWidget {
                             height: 15,
                             // padding: EdgeInsets.symmetric(horizontal: 7,vertical: 5),
                             decoration: BoxDecoration(
-                              color: Color.fromRGBO(217, 217, 217, 1),
+                              color: const Color.fromRGBO(217, 217, 217, 1),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: const Center(
@@ -741,7 +742,7 @@ class CardWidget extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'النوع :  سوني',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -750,7 +751,7 @@ class CardWidget extends StatelessWidget {
                               color: Color.fromRGBO(101, 101, 101, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'المقاس :  17',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -759,7 +760,7 @@ class CardWidget extends StatelessWidget {
                               color: Color.fromRGBO(101, 101, 101, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'رقم الطلب : 12654165498',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -768,16 +769,16 @@ class CardWidget extends StatelessWidget {
                               color: Color.fromRGBO(101, 101, 101, 1),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 24,
                           ),
-                          Text(
+                          const Text(
                             'معلومات العميل',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'الاسم :  احمد الجميل علي',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -786,7 +787,7 @@ class CardWidget extends StatelessWidget {
                               color: Color.fromRGBO(101, 101, 101, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'العنوان :   مركز مخرج (9) شارع الامام عبدالله بن سعود -حي الازدهار',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
@@ -795,7 +796,7 @@ class CardWidget extends StatelessWidget {
                               color: Color.fromRGBO(101, 101, 101, 1),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'الملاحظات :  هنا يتم عرض ملاحظات العميل نفسة',
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
